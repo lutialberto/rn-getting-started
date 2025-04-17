@@ -1,6 +1,6 @@
 import { TouchableOpacity } from "react-native";
 import React from "react";
-import { Text } from "@/components/Themed";
+import { Text } from "@/components/texts/Text";
 import { ButtonProps } from "./ButtonProps";
 import { useButtonStyles } from "./useButtonStyles";
 

@@ -1,4 +1,3 @@
-import { useThemeColor } from "@/components/Themed";
 import {
   StyleProp,
   StyleSheet,
@@ -9,7 +8,7 @@ import {
 } from "react-native";
 import { useButtonVariants } from "./useButtonVariants";
 import { Variant } from "./Constants";
-import Colors from "@/constants/Colors";
+import { useThemeColor } from "@/components/Themed";
 
 /**
  * @description This is a helper hook to get the styles of the button variants
@@ -30,38 +29,37 @@ export function useButtonStyles({
   containerStyle: StyleProp<ViewProps>;
   labelStyle: StyleProp<TextStyle>;
 }) {
-  const colorScheme = useColorScheme();
-  const colorTheme = Colors[colorScheme ?? "light"];
+  const colors = useThemeColor();
 
   const { getContainerStyle, getLabelStyle } = useButtonVariants<Variant>({
     baseStyles: {
       container: styles.baseContainer as StyleProp<ViewStyle>,
       label: {
         ...styles.baseLabel,
-        color: colorTheme.text,
+        color: colors.text,
       } as StyleProp<TextStyle>,
     },
     containerStyles: {
       default: {
         container: {
-          backgroundColor: colorTheme.primary,
+          backgroundColor: colors.primary,
         } as StyleProp<ViewStyle>,
         containerDisabled: {
-          backgroundColor: colorTheme.disabledColor,
+          backgroundColor: colors.disabledColor,
         } as StyleProp<ViewStyle>,
       },
       outline: {
         container: {
           ...styles.outlineContainer,
-          borderColor: colorTheme.primary,
+          borderColor: colors.primary,
         } as StyleProp<ViewStyle>,
         containerDisabled: {
-          borderColor: colorTheme.disabledColor,
+          borderColor: colors.disabledColor,
         } as StyleProp<ViewStyle>,
       },
       textOnly: {
         containerDisabled: {
-          borderColor: colorTheme.disabledColor,
+          borderColor: colors.disabledColor,
         } as StyleProp<ViewStyle>,
       },
     },
@@ -69,18 +67,18 @@ export function useButtonStyles({
       default: {},
       outline: {
         label: {
-          color: colorTheme.primary,
+          color: colors.primary,
         } as StyleProp<TextStyle>,
         labelDisabled: {
-          color: colorTheme.primary,
+          color: colors.primary,
         } as StyleProp<TextStyle>,
       },
       textOnly: {
         label: {
-          color: colorTheme.primary,
+          color: colors.primary,
         } as StyleProp<TextStyle>,
         labelDisabled: {
-          color: colorTheme.disabledColor,
+          color: colors.disabledColor,
         } as StyleProp<TextStyle>,
       },
     },

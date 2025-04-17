@@ -1,9 +1,9 @@
 import { StyleSheet, useColorScheme } from "react-native";
 import React from "react";
 import Modal from "../modal/Modal";
-import { Text, useThemeColor } from "@/components/Themed";
+import { Text } from "@/components/texts/Text";
 import { ModalProps } from "../modal/ModalProps";
-import Colors from "@/constants/Colors";
+import { useThemeColor } from "@/components/Themed";
 
 /**
  * @description Application modal component
@@ -31,15 +31,15 @@ const BottomSheetApp = ({
   childrenContainerStyle,
   visibleContainerStyle,
 }: ModalProps) => {
-  const colorScheme = useColorScheme();
-  const colorTheme = Colors[colorScheme ?? "light"];
+  const colors = useThemeColor();
+
   return (
     <Modal
       modalProps={modalProps}
       visibleContainerStyle={[
         {
           ...styles.visibleContainer,
-          backgroundColor: colorTheme.background,
+          backgroundColor: colors.background,
         },
         visibleContainerStyle,
       ]}

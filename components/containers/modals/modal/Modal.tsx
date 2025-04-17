@@ -7,9 +7,10 @@ import {
 } from "react-native";
 import React from "react";
 import { ModalProps } from "./ModalProps";
-import { Text, useThemeColor, View } from "@/components/Themed";
+import { View } from "@/components/containers/View";
+import { Text } from "@/components/texts/Text";
 import { FontAwesome } from "@expo/vector-icons";
-import Colors from "@/constants/Colors";
+import useThemeColor from "@/hooks/theme/useThemeColor";
 
 /**
  * @description Application modal component
@@ -38,8 +39,7 @@ const Modal = ({
   modalProps,
   children,
 }: ModalProps) => {
-  const colorScheme = useColorScheme();
-  const colorTheme = Colors[colorScheme ?? "light"];
+  const colors = useThemeColor();
 
   return (
     <RNModal {...modalProps} transparent onRequestClose={modalProps.onDismiss}>
@@ -52,7 +52,7 @@ const Modal = ({
         <Pressable
           style={[
             styles.transparentArea,
-            { backgroundColor: colorTheme.lowOpacity },
+            { backgroundColor: colors.lowOpacity },
           ]}
           onPress={modalProps.onDismiss}
         />
@@ -60,7 +60,7 @@ const Modal = ({
           style={[
             {
               ...styles.visibleContainer,
-              backgroundColor: colorTheme.background,
+              backgroundColor: colors.background,
             },
             variant === "modal"
               ? styles.visibleContainerModal
@@ -72,7 +72,7 @@ const Modal = ({
             style={styles.closeIconContainer}
             onPress={modalProps.onDismiss}
           >
-            <FontAwesome name="close" size={14} color={colorTheme.text} />
+            <FontAwesome name="close" size={14} color={colors.text} />
           </TouchableOpacity>
           <View style={childrenContainerStyle}>
             {children ? children : <Text>GenericModal</Text>}

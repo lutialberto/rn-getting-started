@@ -18,7 +18,7 @@ type Themes = {
   dark: ColorsProps;
 };
 
-const colors: Themes = {
+const Colors: Themes = {
   light: {
     text: "#000",
     background: "#fff",
@@ -43,4 +43,4 @@ const colors: Themes = {
   },
 };
 
-export default colors;
+export default Colors;

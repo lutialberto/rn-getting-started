@@ -1,8 +1,8 @@
 import React from "react";
-import { ActivityIndicator, StyleSheet, useColorScheme } from "react-native";
-import { useThemeColor, View } from "@/components/Themed";
+import { ActivityIndicator, StyleSheet } from "react-native";
+import { View } from "@/components/containers/View";
 import { SpinnerProps } from "./SpinnerProps";
-import Colors from "@/constants/Colors";
+import useThemeColor from "@/hooks/theme/useThemeColor";
 
 /**
  * @description Application spinner component
@@ -35,8 +35,7 @@ const Spinner = ({
   children,
   variant = "default",
 }: SpinnerProps) => {
-  const colorScheme = useColorScheme();
-  const colorTheme = Colors[colorScheme ?? "light"];
+  const colors = useThemeColor();
 
   return (
     <View style={[style]}>
@@ -44,7 +43,7 @@ const Spinner = ({
       <ActivityIndicator
         style={styles.overlay}
         animating={visible}
-        color={colorTheme.primary}
+        color={colors.primary}
         size="large"
       />
     </View>

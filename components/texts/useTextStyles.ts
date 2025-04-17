@@ -1,6 +1,7 @@
-import { StyleSheet, useColorScheme } from "react-native";
-import Colors, { ColorsProps } from "@/constants/Colors";
+import { StyleSheet } from "react-native";
+import { ColorsProps } from "@/hooks/theme/Colors";
 import { Fonts } from "./Fonts";
+import useThemeColor from "@/hooks/theme/useThemeColor";
 
 /**
  * @description - This hook is used to get the styles for the text component
@@ -9,13 +10,12 @@ import { Fonts } from "./Fonts";
  * @depencies useTheme
  */
 export const useTextStyles = () => {
-  const colorsScheme = useColorScheme();
-  const colorsTheme = Colors[colorsScheme ?? "light"];
-  const styles = getStyles(colorsTheme);
+  const colors = useThemeColor();
+  const styles = getStyles(colors);
 
   return {
     textStyles: styles,
-    colors: colorsTheme,
+    colors,
   };
 };
 
