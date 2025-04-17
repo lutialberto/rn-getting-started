@@ -1,12 +1,12 @@
 import useThemeColor from "@/hooks/theme/useThemeColor";
-import { View as DefaultView } from "react-native";
+import { View } from "react-native";
 
-export function View(props: DefaultView["props"]) {
+export function ViewApp(props: View["props"]) {
   const { style, ...otherProps } = props;
   const colors = useThemeColor();
 
   return (
-    <DefaultView
+    <View
       style={[{ backgroundColor: colors.background }, style]}
       {...otherProps}
     />

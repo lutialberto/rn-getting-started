@@ -1,13 +1,13 @@
 import React from "react";
 import { ActivityIndicator, StyleSheet } from "react-native";
-import { View } from "@/components/containers/View";
-import { SpinnerProps } from "./SpinnerProps";
+import { ViewApp } from "@/components/containers/ViewApp";
+import { SpinnerAppProps } from "./SpinnerAppProps";
 import useThemeColor from "@/hooks/theme/useThemeColor";
 
 /**
  * @description Application spinner component
  * @example Minimal Example
- * <Spinner
+ * <SpinnerApp
  *  visible={true}
  *  style={{
  *   height: 100,//usar este
@@ -15,7 +15,7 @@ import useThemeColor from "@/hooks/theme/useThemeColor";
  *  }}
  * />
  * @example Full Example
- * <Spinner
+ * <SpinnerApp
  *  visible={true}
  *  style={{
  *   height: 100,//usar este
@@ -24,21 +24,21 @@ import useThemeColor from "@/hooks/theme/useThemeColor";
  *  variant={'default'}
  * >
  *   <Text>Content</Text>
- * </Spinner>
+ * </SpinnerApp>
  * @dependencies useThemeColor
  * @param visible - spinner visible
  * @param variant - spinner variant
  */
-const Spinner = ({
+const SpinnerApp = ({
   visible,
   style,
   children,
   variant = "default",
-}: SpinnerProps) => {
+}: SpinnerAppProps) => {
   const colors = useThemeColor();
 
   return (
-    <View style={[style]}>
+    <ViewApp style={[style]}>
       {(variant === "overlap" || !visible) && children}
       <ActivityIndicator
         style={styles.overlay}
@@ -46,11 +46,11 @@ const Spinner = ({
         color={colors.primary}
         size="large"
       />
-    </View>
+    </ViewApp>
   );
 };
 
-export default Spinner;
+export default SpinnerApp;
 
 const styles = StyleSheet.create({
   overlay: {

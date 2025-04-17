@@ -2,41 +2,41 @@ import React from "react";
 import { StyleSheet } from "react-native";
 
 import { ExternalLink } from "./ExternalLink";
-import { View } from "@/components/containers/View";
-import { Text } from "./texts/Text";
+import { ViewApp } from "@/components/containers/ViewApp";
+import { TextApp } from "./texts/TextApp";
 
 export default function EditScreenInfo({ path }: { path: string }) {
   return (
-    <View>
-      <View style={styles.getStartedContainer}>
-        <Text style={styles.getStartedText}>
+    <ViewApp>
+      <ViewApp style={styles.getStartedContainer}>
+        <TextApp style={styles.getStartedText}>
           Open up the code for this screen:
-        </Text>
+        </TextApp>
 
-        <View
+        <ViewApp
           style={[styles.codeHighlightContainer, styles.homeScreenFilename]}
         >
-          <Text>{path}</Text>
-        </View>
+          <TextApp>{path}</TextApp>
+        </ViewApp>
 
-        <Text style={styles.getStartedText}>
+        <TextApp style={styles.getStartedText}>
           Change any of the text, save the file, and your app will automatically
           update.
-        </Text>
-      </View>
+        </TextApp>
+      </ViewApp>
 
-      <View style={styles.helpContainer}>
+      <ViewApp style={styles.helpContainer}>
         <ExternalLink
           style={styles.helpLink}
           href="https://docs.expo.io/get-started/create-a-new-app/#opening-the-app-on-your-phonetablet"
         >
-          <Text style={styles.helpLinkText}>
+          <TextApp style={styles.helpLinkText}>
             Tap here if your app doesn't automatically update after making
             changes
-          </Text>
+          </TextApp>
         </ExternalLink>
-      </View>
-    </View>
+      </ViewApp>
+    </ViewApp>
   );
 }
 

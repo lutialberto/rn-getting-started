@@ -1,7 +1,7 @@
 import { StyleProp, TextStyle, ViewStyle } from "react-native/types";
 import { Variant } from "./Constants";
 
-export interface ButtonProps {
+export interface ButtonAppProps {
   variant?: Variant;
   onPress: () => void;
   label?: string;

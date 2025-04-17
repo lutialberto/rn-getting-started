@@ -1,16 +1,16 @@
 import { TouchableOpacity } from "react-native";
 import React from "react";
-import { Text } from "@/components/texts/Text";
-import { ButtonProps } from "./ButtonProps";
+import { TextApp } from "@/components/texts/TextApp";
+import { ButtonAppProps } from "./ButtonAppProps";
 import { useButtonStyles } from "./useButtonStyles";
 
 /**
  * @description Application button component
  * @snippet appButton
  * @example Minimal Example
- * <Button onPress={() => { }} />
+ * <ButtonApp onPress={() => { }} />
  * @example Full Example
- * <Button
+ * <ButtonApp
  *  variant={'default'}
  *  enabled={true}
  *  onPress={() => { }}
@@ -29,7 +29,7 @@ import { useButtonStyles } from "./useButtonStyles";
  * @param labelStyle - style of the button label
  */
 
-const Button = ({
+const ButtonApp = ({
   variant = "default",
   enabled = true,
   containerStyle,
@@ -37,7 +37,7 @@ const Button = ({
   onPress,
   icon = <></>,
   label = "",
-}: ButtonProps) => {
+}: ButtonAppProps) => {
   const { containerStyle: containerStyleFinal, labelStyle: labelStyleFinal } =
     useButtonStyles({
       containerStyle,
@@ -54,10 +54,10 @@ const Button = ({
     >
       <>
         {icon}
-        {<Text style={labelStyleFinal}>{label}</Text>}
+        {<TextApp style={labelStyleFinal}>{label}</TextApp>}
       </>
     </TouchableOpacity>
   );
 };
 
-export default Button;
+export default ButtonApp;

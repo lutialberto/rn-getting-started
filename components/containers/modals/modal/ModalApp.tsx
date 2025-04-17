@@ -1,49 +1,43 @@
-import {
-  Modal as RNModal,
-  Pressable,
-  StyleSheet,
-  TouchableOpacity,
-  useColorScheme,
-} from "react-native";
+import { Modal, Pressable, StyleSheet, TouchableOpacity } from "react-native";
 import React from "react";
-import { ModalProps } from "./ModalProps";
-import { View } from "@/components/containers/View";
-import { Text } from "@/components/texts/Text";
+import { ModalAppProps } from "./ModalAppProps";
+import { ViewApp } from "@/components/containers/ViewApp";
+import { TextApp } from "@/components/texts/TextApp";
 import { FontAwesome } from "@expo/vector-icons";
 import useThemeColor from "@/hooks/theme/useThemeColor";
 
 /**
  * @description Application modal component
  * @example Minimal Example
- * <Modal modalProps={{ visible: true, onDismiss: () => { } }} >
+ * <ModalApp modalProps={{ visible: true, onDismiss: () => { } }} >
  *  <Text>GenericModal</Text>
- * </Modal>
+ * </ModalApp>
  * @example Full Example
- * <Modal
+ * <ModalApp
  *  modalProps={{ visible: true, onDismiss: () => { } }}
  *  visibleContainerStyle={styles.visibleContainer}
  *  childrenContainerStyle={styles.childrenContainer}
  * >
  *  <Text>GenericModal</Text>
- * </Modal>
+ * </ModalApp>
  * @dependencies Text, useThemeColor
  * @param modalProps - modal props
  * @param children - modal children
  * @param childrenContainerStyle - style of the children container
  * @param visibleContainerStyle - style of the visible container
  */
-const Modal = ({
+const ModalApp = ({
   visibleContainerStyle,
   childrenContainerStyle,
   variant = "modal",
   modalProps,
   children,
-}: ModalProps) => {
+}: ModalAppProps) => {
   const colors = useThemeColor();
 
   return (
-    <RNModal {...modalProps} transparent onRequestClose={modalProps.onDismiss}>
-      <View
+    <Modal {...modalProps} transparent onRequestClose={modalProps.onDismiss}>
+      <ViewApp
         style={[
           styles.mainContainer,
           { justifyContent: variant == "modal" ? "center" : "flex-end" },
@@ -56,7 +50,7 @@ const Modal = ({
           ]}
           onPress={modalProps.onDismiss}
         />
-        <View
+        <ViewApp
           style={[
             {
               ...styles.visibleContainer,
@@ -74,16 +68,16 @@ const Modal = ({
           >
             <FontAwesome name="close" size={14} color={colors.text} />
           </TouchableOpacity>
-          <View style={childrenContainerStyle}>
-            {children ? children : <Text>GenericModal</Text>}
-          </View>
-        </View>
-      </View>
-    </RNModal>
+          <ViewApp style={childrenContainerStyle}>
+            {children ? children : <TextApp>GenericModal</TextApp>}
+          </ViewApp>
+        </ViewApp>
+      </ViewApp>
+    </Modal>
   );
 };
 
-export default Modal;
+export default ModalApp;
 
 const styles = StyleSheet.create({
   mainContainer: {

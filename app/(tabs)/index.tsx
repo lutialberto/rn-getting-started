@@ -1,16 +1,16 @@
 import { StyleSheet } from "react-native";
 
 import EditScreenInfo from "@/components/EditScreenInfo";
-import { View } from "@/components/containers/View";
-import { Text } from "@/components/texts/Text";
+import { ViewApp } from "@/components/containers/ViewApp";
+import { TextApp } from "@/components/texts/TextApp";
 
 export default function TabOneScreen() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Tab One</Text>
-      <View style={styles.separator} />
+    <ViewApp style={styles.container}>
+      <TextApp style={styles.title}>Tab One</TextApp>
+      <ViewApp style={styles.separator} />
       <EditScreenInfo path="app/(tabs)/index.tsx" />
-    </View>
+    </ViewApp>
   );
 }
 

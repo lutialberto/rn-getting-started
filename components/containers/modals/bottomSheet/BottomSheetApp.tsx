@@ -1,9 +1,9 @@
-import { StyleSheet, useColorScheme } from "react-native";
+import { StyleSheet } from "react-native";
 import React from "react";
-import Modal from "../modal/Modal";
-import { Text } from "@/components/texts/Text";
-import { ModalProps } from "../modal/ModalProps";
-import { useThemeColor } from "@/components/Themed";
+import ModalApp from "../modal/ModalApp";
+import { TextApp } from "@/components/texts/TextApp";
+import { ModalAppProps } from "../modal/ModalAppProps";
+import useThemeColor from "@/hooks/theme/useThemeColor";
 
 /**
  * @description Application modal component
@@ -30,11 +30,11 @@ const BottomSheetApp = ({
   children,
   childrenContainerStyle,
   visibleContainerStyle,
-}: ModalProps) => {
+}: ModalAppProps) => {
   const colors = useThemeColor();
 
   return (
-    <Modal
+    <ModalApp
       modalProps={modalProps}
       visibleContainerStyle={[
         {
@@ -46,8 +46,8 @@ const BottomSheetApp = ({
       childrenContainerStyle={childrenContainerStyle}
       variant="bottomSheet"
     >
-      {children ?? <Text> GenericModal</Text>}
-    </Modal>
+      {children ?? <TextApp> GenericModal</TextApp>}
+    </ModalApp>
   );
 };
 

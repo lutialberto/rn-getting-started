@@ -4,7 +4,7 @@ import {
   ViewStyle,
 } from "react-native/types";
 
-export interface ModalProps {
+export interface ModalAppProps {
   modalProps: OGModalProps;
   children?: React.ReactNode | JSX.Element[];
   visibleContainerStyle?: StyleProp<ViewStyle>;

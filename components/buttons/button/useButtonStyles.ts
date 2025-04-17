@@ -8,7 +8,7 @@ import {
 } from "react-native";
 import { useButtonVariants } from "./useButtonVariants";
 import { Variant } from "./Constants";
-import { useThemeColor } from "@/components/Themed";
+import useThemeColor from "@/hooks/theme/useThemeColor";
 
 /**
  * @description This is a helper hook to get the styles of the button variants
