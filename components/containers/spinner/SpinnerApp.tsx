@@ -1,6 +1,5 @@
 import React from "react";
-import { ActivityIndicator, StyleSheet } from "react-native";
-import { ViewApp } from "@/components/containers/ViewApp";
+import { ActivityIndicator, StyleSheet, View } from "react-native";
 import { SpinnerAppProps } from "./SpinnerAppProps";
 import useThemeColor from "@/hooks/theme/useThemeColor";
 
@@ -38,7 +37,7 @@ const SpinnerApp = ({
   const colors = useThemeColor();
 
   return (
-    <ViewApp style={[style]}>
+    <View style={[style]}>
       {(variant === "overlap" || !visible) && children}
       <ActivityIndicator
         style={styles.overlay}
@@ -46,7 +45,7 @@ const SpinnerApp = ({
         color={colors.primary}
         size="large"
       />
-    </ViewApp>
+    </View>
   );
 };
 

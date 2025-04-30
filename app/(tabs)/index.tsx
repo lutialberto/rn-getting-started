@@ -3,7 +3,7 @@ import { TextApp } from "@/components/texts/TextApp";
 import { Link } from "expo-router";
 import { useForm } from "react-hook-form";
 import InputTextApp from "@/components/forms/inputText/InputTextApp";
-import { ViewApp } from "@/components/containers/ViewApp";
+import { ViewThemed } from "@/components/containers/ViewThemed";
 
 export default function TabOneScreen() {
   const {
@@ -18,7 +18,7 @@ export default function TabOneScreen() {
   });
 
   return (
-    <ViewApp style={styles.container}>
+    <ViewThemed style={styles.container}>
       <TextApp style={styles.title}>Tab One</TextApp>
       <Link href="/modal">
         <TextApp>Go to modal</TextApp>
@@ -36,7 +36,7 @@ export default function TabOneScreen() {
           clearInput={() => setValue("name", "")}
         />
       </View>
-    </ViewApp>
+    </ViewThemed>
   );
 }
 

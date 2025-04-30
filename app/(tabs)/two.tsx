@@ -1,12 +1,12 @@
 import { StyleSheet } from "react-native";
-import { ViewApp } from "@/components/containers/ViewApp";
+import { ViewThemed } from "@/components/containers/ViewThemed";
 import { TextApp } from "@/components/texts/TextApp";
 
 export default function TabTwoScreen() {
   return (
-    <ViewApp style={styles.container}>
+    <ViewThemed style={styles.container}>
       <TextApp style={styles.title}>Tab Two</TextApp>
-    </ViewApp>
+    </ViewThemed>
   );
 }
 

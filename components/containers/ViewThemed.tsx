@@ -1,7 +1,7 @@
 import useThemeColor from "@/hooks/theme/useThemeColor";
 import { View } from "react-native";
 
-export function ViewApp(props: View["props"]) {
+export function ViewThemed(props: View["props"]) {
   const { style, ...otherProps } = props;
   const colors = useThemeColor();
 

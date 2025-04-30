@@ -1,7 +1,13 @@
-import { Modal, Pressable, StyleSheet, TouchableOpacity } from "react-native";
+import {
+  Modal,
+  Pressable,
+  StyleSheet,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import React from "react";
 import { ModalAppProps } from "./ModalAppProps";
-import { ViewApp } from "@/components/containers/ViewApp";
+import { ViewThemed } from "@/components/containers/ViewThemed";
 import { TextApp } from "@/components/texts/TextApp";
 import { FontAwesome } from "@expo/vector-icons";
 import useThemeColor from "@/hooks/theme/useThemeColor";
@@ -37,7 +43,7 @@ const ModalApp = ({
 
   return (
     <Modal {...modalProps} transparent onRequestClose={modalProps.onDismiss}>
-      <ViewApp
+      <View
         style={[
           styles.mainContainer,
           { justifyContent: variant == "modal" ? "center" : "flex-end" },
@@ -50,7 +56,7 @@ const ModalApp = ({
           ]}
           onPress={modalProps.onDismiss}
         />
-        <ViewApp
+        <ViewThemed
           style={[
             {
               ...styles.visibleContainer,
@@ -68,11 +74,11 @@ const ModalApp = ({
           >
             <FontAwesome name="close" size={14} color={colors.text} />
           </TouchableOpacity>
-          <ViewApp style={childrenContainerStyle}>
+          <View style={childrenContainerStyle}>
             {children ? children : <TextApp>GenericModal</TextApp>}
-          </ViewApp>
-        </ViewApp>
-      </ViewApp>
+          </View>
+        </ViewThemed>
+      </View>
     </Modal>
   );
 };
