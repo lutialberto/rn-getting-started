@@ -1,0 +1,65 @@
+{
+  // Place your rn-fwk workspace snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and
+  // description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope
+  // is left empty or omitted, the snippet gets applied to all languages. The prefix is what is
+  // used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+  // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders.
+  // Placeholders with the same ids are connected.
+  // Example:
+  // "Print to console": {
+  // 	"scope": "javascript,typescript",
+  // 	"prefix": "log",
+  // 	"body": [
+  // 		"console.log('$1');",
+  // 		"$2"
+  // 	],
+  // 	"description": "Log output to console"
+  // }
+  "useForm": {
+    "scope": "typescriptreact",
+    "prefix": "appUseForm",
+    "body": [
+      "const {",
+      "  control,",
+      "  formState: { errors },",
+      "  setValue,",
+      "  handleSubmit,",
+      "} = useForm${0}<${1:{ name: string }}>({",
+      "  defaultValues: {",
+      "    ${2:name: \"\",}",
+      "  },",
+      "});",
+      "",
+      "const onSubmitSucess = (data: ${1:{ name: string }}) => {",
+      "  console.log({ data });",
+      "};",
+    ],
+    "description": "config useForm",
+  },
+  "FormSubmit": {
+    "scope": "typescriptreact",
+    "prefix": "appFormSubmit",
+    "body": [
+      "<ButtonApp${0} label={\"${1:Guardar}\"} onPress={handleSubmit(onSubmitSucess)} />",
+    ],
+    "description": "Add form submit button",
+  },
+  "InputTextApp": {
+    "scope": "typescriptreact",
+    "prefix": "appInputTextApp",
+    "body": [
+      "<InputTextApp${0}",
+      "  formControl={{",
+      "    control,",
+      "    name: \"${1:name}\",",
+      "    rules: { required: \"The input is required\" },",
+      "  }}",
+      "  label={\"${2:Nombre}\"}",
+      "  containerStyle={{ minWidth: 250 }}",
+      "  error={errors.${1:name}?.message}",
+      "  clearInput={() => setValue(\"${1:name}\", \"\")}",
+      "/>",
+    ],
+    "description": "Add InputTextApp component",
+  },
+}

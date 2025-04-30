@@ -19,8 +19,8 @@
     "scope": "typescript,typescriptreact",
     "prefix": "hookTheme",
     "body": [
-      "const {colors} = useThemeColor$1();",
-      "const styles = getStyles();",
+      "const colors = useThemeColor$1();",
+      "const styles = getStyles(colors);",
     ],
     "description": "Use theme hook",
   },
