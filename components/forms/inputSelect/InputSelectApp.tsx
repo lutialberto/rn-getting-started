@@ -9,6 +9,33 @@ import { TextApp } from "@/components/texts/TextApp";
 import ModalApp from "@/components/containers/modals/modal/ModalApp";
 import IconApp from "@/components/texts/icon/IconApp";
 
+/**
+ * @description Application input select component
+ * @example
+ * <InputSelectApp
+ *   formControl={{
+ *     control: control,
+ *     name: "option",
+ *     rules: { required: "The input field is required" },
+ *   }}
+ *   label={"Opciones"}
+ *   error={errors.option?.message}
+ *   containerStyle={{ minWidth: 250 }}
+ *   clearInput={() => setValue("option", null)}
+ *   options={[
+ *     { label: "Option 1", value: "option1" },
+ *     { label: "Option 2", value: "option2" },
+ *     { label: "Option 3", value: "option3" },
+ *   ]}
+ * />
+ * @dependencies InputWrapperApp, ModalApp, TextApp, IconApp, useTextStyles, useThemeColor, react-hook-form
+ * @param options - options to select
+ * @param formControl - form control of the input text
+ * @param label - input wrapper label
+ * @param error - input wrapper error
+ * @param containerStyle - input wrapper container style
+ * @param clearInput - function to clear the input
+ */
 export default function InputSelectApp<T extends FieldValues>({
   options,
   formControl,
