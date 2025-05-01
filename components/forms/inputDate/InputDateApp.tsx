@@ -1,12 +1,10 @@
-import { Platform, Pressable, StyleSheet, Text, View } from "react-native";
+import { Platform, Pressable, StyleSheet } from "react-native";
 import React, { useState } from "react";
 import { FieldValues, useController } from "react-hook-form";
 import { DatePickerConfigProps, InputDateAppProps } from "./InputDateAppProps";
 import InputDateAndroid from "./implementations/InputDateAndroid";
 import InputDateIos from "./implementations/InputDateIos";
 import InputWrapperApp from "../inputWrapper/InputWrapperApp";
-import IconApp from "@/components/texts/icon/IconApp";
-import { useTextStyles } from "@/components/texts/useTextStyles";
 import useThemeColor from "@/hooks/theme/useThemeColor";
 import { TextApp } from "@/components/texts/TextApp";
 import {
@@ -14,6 +12,7 @@ import {
   DateTimePickerEvent,
   IOSNativeProps,
 } from "@react-native-community/datetimepicker";
+import InputClearIconApp from "../inputClear/InputClearIconApp";
 
 /**
  * @description Application input date component
@@ -25,7 +24,7 @@ import {
  *  containerStyle={{ minWidth: 250 }}
  *  clearInput={() => setValue("date", null)}
  * />
- * @dependencies InputWrapperApp, TextApp, IconApp, InputDateIos, InputDateAdroid, react-hook-form, @react-native-community/datetimepicker
+ * @dependencies InputAppProps, InputClearIconApp, InputWrapperApp, TextApp, IconApp, InputDateIos, InputDateAdroid, react-hook-form, @react-native-community/datetimepicker
  * @param formControl - form control of the input date
  * @param dateInput - date input props
  */
@@ -39,7 +38,6 @@ function InputDateApp<T extends FieldValues>({
 }: InputDateAppProps<T>) {
   const { field } = useController(formControl);
   const [visible, setVisible] = useState(false);
-  const { textStyles } = useTextStyles();
   const colors = useThemeColor();
 
   const handleChange = (event: DateTimePickerEvent, date?: Date) => {
@@ -102,19 +100,16 @@ function InputDateApp<T extends FieldValues>({
       containerStyle={containerStyle}
       childrenContainerStyle={[styles.containerStyle]}
     >
-      <Pressable style={styles.textContainer} onPress={() => setVisible(true)}>
-        <TextApp>{formatDate(field.value)}</TextApp>
-      </Pressable>
-      {!!field.value && clearInput && (
-        <Pressable onPress={clearInput}>
-          <IconApp
-            color={colors.text}
-            name="close"
-            size={textStyles.textDefault.fontSize}
-          />
+      <>
+        <Pressable
+          style={styles.textContainer}
+          onPress={() => setVisible(true)}
+        >
+          <TextApp>{formatDate(field.value)}</TextApp>
         </Pressable>
-      )}
-      {renderDatePicker()}
+        <InputClearIconApp clearInput={clearInput} value={field.value} />
+        {renderDatePicker()}
+      </>
     </InputWrapperApp>
   );
 }

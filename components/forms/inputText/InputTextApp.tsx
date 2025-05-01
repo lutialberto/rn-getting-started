@@ -1,11 +1,11 @@
-import { Pressable, StyleSheet, TextInput, View } from "react-native";
+import { StyleSheet, TextInput } from "react-native";
 import React, { useState } from "react";
 import { FieldValues, useController } from "react-hook-form";
 import { InputTextAppProps } from "./InputTextAppProps";
 import { useTextStyles } from "@/components/texts/useTextStyles";
 import InputWrapperApp from "../inputWrapper/InputWrapperApp";
 import useThemeColor from "@/hooks/theme/useThemeColor";
-import IconApp from "@/components/texts/icon/IconApp";
+import InputClearIconApp from "../inputClear/InputClearIconApp";
 
 /**
  * @description Application input text component
@@ -16,7 +16,7 @@ import IconApp from "@/components/texts/icon/IconApp";
  *  label='GenericLabel'
  *  error='GenericError'
  * />
- * @dependencies InputWrapperApp, useTextStyles, react-hook-form, IconApp
+ * @dependencies InputAppProps, InputClearIconApp, InputWrapperApp, useTextStyles, react-hook-form, IconApp
  * @param formControl - form control of the input text
  * @param textInput - text input props
  * @param label - input wrapper label
@@ -40,28 +40,22 @@ export default function InputTextApp<T extends FieldValues>(
         isFocused && { borderColor: colors.primary },
       ]}
     >
-      <TextInput
-        {...props.textInput}
-        style={[textStyles.textDefault, styles.input, props.textInput?.style]}
-        value={field.value}
-        cursorColor={colors.text}
-        onBlur={() => {
-          setIsFocused(false);
-          field.onBlur();
-        }}
-        onFocus={() => setIsFocused(true)}
-        onChangeText={(value) => field.onChange(value)}
-        ref={field.ref}
-      />
-      {!!field.value && (
-        <Pressable onPress={props.clearInput}>
-          <IconApp
-            color={colors.text}
-            name="close"
-            size={textStyles.textDefault.fontSize}
-          />
-        </Pressable>
-      )}
+      <>
+        <TextInput
+          {...props.textInput}
+          style={[textStyles.textDefault, styles.input, props.textInput?.style]}
+          value={field.value}
+          cursorColor={colors.text}
+          onBlur={() => {
+            setIsFocused(false);
+            field.onBlur();
+          }}
+          onFocus={() => setIsFocused(true)}
+          onChangeText={(value) => field.onChange(value)}
+          ref={field.ref}
+        />
+        <InputClearIconApp clearInput={props.clearInput} value={field.value} />
+      </>
     </InputWrapperApp>
   );
 }

@@ -1,12 +1,8 @@
-import { StyleProp, TextInputProps, ViewStyle } from "react-native";
-import { FieldValues, UseControllerProps } from "react-hook-form";
-import { ClearInputProps } from "../models/ClearInputProps";
+import { TextInputProps } from "react-native";
+import { FieldValues } from "react-hook-form";
+import { InputAppProps } from "../models/InputAppProps";
 
 export interface InputTextAppProps<T extends FieldValues>
-  extends ClearInputProps {
+  extends InputAppProps<T> {
   textInput?: TextInputProps;
-  formControl: UseControllerProps<T>;
-  label?: string;
-  error?: string;
-  containerStyle?: StyleProp<ViewStyle>;
 }
