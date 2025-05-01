@@ -40,30 +40,28 @@ export default function InputTextApp<T extends FieldValues>(
         isFocused && { borderColor: colors.primary },
       ]}
     >
-      <>
-        <TextInput
-          {...props.textInput}
-          style={[textStyles.textDefault, styles.input, props.textInput?.style]}
-          value={field.value}
-          cursorColor={colors.text}
-          onBlur={() => {
-            setIsFocused(false);
-            field.onBlur();
-          }}
-          onFocus={() => setIsFocused(true)}
-          onChangeText={(value) => field.onChange(value)}
-          ref={field.ref}
-        />
-        {!!field.value && (
-          <Pressable onPress={props.clearInput}>
-            <IconApp
-              color={colors.text}
-              name="close"
-              size={textStyles.textDefault.fontSize}
-            />
-          </Pressable>
-        )}
-      </>
+      <TextInput
+        {...props.textInput}
+        style={[textStyles.textDefault, styles.input, props.textInput?.style]}
+        value={field.value}
+        cursorColor={colors.text}
+        onBlur={() => {
+          setIsFocused(false);
+          field.onBlur();
+        }}
+        onFocus={() => setIsFocused(true)}
+        onChangeText={(value) => field.onChange(value)}
+        ref={field.ref}
+      />
+      {!!field.value && (
+        <Pressable onPress={props.clearInput}>
+          <IconApp
+            color={colors.text}
+            name="close"
+            size={textStyles.textDefault.fontSize}
+          />
+        </Pressable>
+      )}
     </InputWrapperApp>
   );
 }
