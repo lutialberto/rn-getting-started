@@ -154,4 +154,22 @@
     ],
     "description": "Add InputSelectApp component",
   },
+  "InputDateApp": {
+    "scope": "typescriptreact",
+    "prefix": "appInputDateApp",
+    "body": [
+      "<InputDateApp${0}",
+      "  formControl={{",
+      "    control,",
+      "    name: \"${1:date}\",",
+      "    rules: { required: \"The input field is required\" },",
+      "  }}",
+      "  label={\"${2:Fecha}\"}",
+      "  error={errors.${1:date}?.message}",
+      "  containerStyle={{ minWidth: 250 }}",
+      "  clearInput={() => setValue(\"${1:date}\", null)}",
+      "/>",
+    ],
+    "description": "Add InputDateApp component",
+  },
 }
