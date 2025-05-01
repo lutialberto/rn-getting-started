@@ -172,4 +172,22 @@
     ],
     "description": "Add InputDateApp component",
   },
+  "InputCheckboxApp": {
+    "scope": "typescriptreact",
+    "prefix": "appInputCheckboxApp",
+    "body": [
+      "<InputCheckboxApp${0}",
+      "  formControl={{",
+      "    control,",
+      "    name: \"${1:checkbox}\",",
+      "    rules: {",
+      "      validate: value => value === true || \"The checkbox is required\",",
+      "    },",
+      "  }}",
+      "  label={\"${2:Normal Checkbox}\"}",
+      "  error={errors.${1:checkbox}?.message}",
+      "/>",
+    ],
+    "description": "Add InputDateApp component",
+  },
 }
