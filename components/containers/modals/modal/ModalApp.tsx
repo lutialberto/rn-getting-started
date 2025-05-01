@@ -9,8 +9,8 @@ import React from "react";
 import { ModalAppProps } from "./ModalAppProps";
 import { ViewThemed } from "@/components/containers/ViewThemed";
 import { TextApp } from "@/components/texts/TextApp";
-import { FontAwesome } from "@expo/vector-icons";
 import useThemeColor from "@/hooks/theme/useThemeColor";
+import IconApp from "@/components/texts/icon/IconApp";
 
 /**
  * @description Application modal component
@@ -72,7 +72,7 @@ const ModalApp = ({
             style={styles.closeIconContainer}
             onPress={modalProps.onDismiss}
           >
-            <FontAwesome name="close" size={14} color={colors.text} />
+            <IconApp name="close" size={22} color={colors.text} />
           </TouchableOpacity>
           <View style={childrenContainerStyle}>
             {children ? children : <TextApp>GenericModal</TextApp>}
@@ -103,8 +103,8 @@ const styles = StyleSheet.create({
   },
   closeIconContainer: {
     position: "absolute",
-    top: 5,
-    right: 5,
+    top: 12,
+    right: 12,
   },
   visibleContainer: {
     borderRadius: 15,
