@@ -45,6 +45,7 @@ function InputDateApp<T extends FieldValues>({
     if (updateValue) {
       field.onChange(date);
     }
+    setVisible(false);
   };
 
   const dateTimeConfig: DatePickerConfigProps = {
