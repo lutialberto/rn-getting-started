@@ -94,9 +94,9 @@ const styles = StyleSheet.create({
   baseContainer: {
     justifyContent: "center",
     alignItems: "center",
-    borderRadius: 10,
-    paddingVertical: 4,
-    paddingHorizontal: 6,
+    borderRadius: 8,
+    paddingVertical: 10,
+    paddingHorizontal: 14,
     flexDirection: "row",
   },
   baseLabel: {
