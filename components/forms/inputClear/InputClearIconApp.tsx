@@ -14,12 +14,18 @@ const InputClearIconApp = (props: { value: any; clearInput?: () => void }) => {
   return (
     <>
       {!!props.value && props.clearInput && (
-        <Pressable onPress={props.clearInput}>
-          <IconApp
-            color={colors.text}
-            name="close"
-            size={textStyles.textDefault.fontSize}
-          />
+        <Pressable
+          onPress={props.clearInput}
+          style={{
+            justifyContent: "center",
+            alignItems: "center",
+            paddingVertical: 1,
+            paddingHorizontal: 3,
+            backgroundColor: colors.disabledColor,
+            borderRadius: 50,
+          }}
+        >
+          <IconApp color={colors.text} name="close" size={14} />
         </Pressable>
       )}
     </>
