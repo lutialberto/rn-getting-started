@@ -63,4 +63,22 @@
     ],
     "description": "Spinner component",
   },
+  "Carrousel": {
+    "scope": "typescriptreact",
+    "prefix": "appCarrousel",
+    "body": [
+      "<CarrouselApp${0}",
+      "  carrouselContainerStyle={{",
+      "    width: 300,",
+      "    height: 200,",
+      "  }}",
+      "  items={[",
+      "    <TextApp>1</TextApp>,",
+      "    <TextApp>2</TextApp>,",
+      "    <TextApp>3</TextApp>,",
+      "  ]}",
+      "/>",
+    ],
+    "description": "Carrousel component",
+  },
 }
