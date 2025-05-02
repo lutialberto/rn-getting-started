@@ -81,4 +81,18 @@
     ],
     "description": "Carrousel component",
   },
+  "Accordion": {
+    "scope": "typescriptreact",
+    "prefix": "appAccordion",
+    "body": [
+      "<AccordionApp${0}",
+      "  containerStyle={{width: '90%'}}",
+      "  items={[1, 2, 3].map(item => ({",
+      "    title: \"Accordion Item \" + item,",
+      "    body: <TextApp>Accordion Item Body{item}</TextApp>,",
+      "  }))}",
+      "/>",
+    ],
+    "description": "Accordion component",
+  },
 }
