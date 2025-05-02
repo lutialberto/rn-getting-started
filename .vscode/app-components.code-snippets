@@ -27,6 +27,14 @@
     "body": ["<TextApp$1>{'${2:Text}'}</TextApp>"],
     "description": "Text component",
   },
+  "Icon": {
+    "scope": "typescriptreact",
+    "prefix": "appIcon",
+    "body": [
+      "<IconApp$0 color={${1:colors.text}} name=\"${2:close}\" size={${3:14}} />",
+    ],
+    "description": "IconApp component",
+  },
   "Modal": {
     "scope": "typescriptreact",
     "prefix": "appModal",
