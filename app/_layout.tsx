@@ -9,6 +9,7 @@ import { useEffect } from "react";
 import "react-native-reanimated";
 import { useFonts } from "@/components/texts/useFonts";
 import { useColorScheme } from "react-native";
+import ToastApp from "@/components/toast/ToastApp";
 
 export {
   // Catch any errors thrown by the Layout component.
@@ -41,7 +42,12 @@ export default function RootLayout() {
     return null;
   }
 
-  return <RootLayoutNav />;
+  return (
+    <>
+      <RootLayoutNav />
+      <ToastApp />
+    </>
+  );
 }
 
 function RootLayoutNav() {

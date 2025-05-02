@@ -39,7 +39,13 @@
   "TextStylesHook": {
     "scope": "typescript,typescriptreact",
     "prefix": "hookTextStyles",
-    "body": ["const { textStyles, colors } = useTextStyles$1();"],
+    "body": ["const { textStyles, colors } = useTextStyles$0();"],
     "description": "Use text styles hook",
+  },
+  "ToastHook": {
+    "scope": "typescript,typescriptreact",
+    "prefix": "hookToast",
+    "body": ["const { showToast } = useToastApp$0();"],
+    "description": "Use toast hook",
   },
 }
