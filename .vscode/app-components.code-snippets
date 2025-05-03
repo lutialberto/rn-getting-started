@@ -103,6 +103,20 @@
     ],
     "description": "Accordion component",
   },
+  "BottomTabs": {
+    "scope": "typescriptreact",
+    "prefix": "appBottomTabs",
+    "body": [
+      "<BottomTabsApp$0",
+      "  tabItems={[",
+      "    { name: \"default\", title: \"Solapa default\", icon:\"code\", },",
+      "    { name: \"tab1\", title: \"Solapa 2\", icon:\"code\", },",
+      "    { name: \"tab2\", title: \"Solapa 3\", icon:\"code\", },",
+      "  ]}",
+      "/>",
+    ],
+    "description": "BottomTabs component",
+  },
   "TopTabs": {
     "scope": "typescriptreact",
     "prefix": "appTopTabs",
