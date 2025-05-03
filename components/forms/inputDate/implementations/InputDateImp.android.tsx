@@ -3,9 +3,9 @@ import {
   DateTimePickerAndroid,
   AndroidNativeProps,
 } from "@react-native-community/datetimepicker";
-import { InputDateImplementationProps } from "./InputDateImplementationProps";
+import { InputDateImpProps } from "./InputDateImpProps";
 
-const InputDateAndroid = (props: InputDateImplementationProps) => {
+const InputDateImpAndroid = (props: InputDateImpProps) => {
   useEffect(() => {
     if (props.visible) {
       DateTimePickerAndroid.open(
@@ -17,4 +17,4 @@ const InputDateAndroid = (props: InputDateImplementationProps) => {
   return <></>;
 };
 
-export default InputDateAndroid;
+export default InputDateImpAndroid;

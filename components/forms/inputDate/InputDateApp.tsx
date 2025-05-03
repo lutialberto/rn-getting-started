@@ -1,18 +1,13 @@
-import { Platform, Pressable, StyleSheet } from "react-native";
+import { Pressable, StyleSheet } from "react-native";
 import React, { useState } from "react";
 import { FieldValues, useController } from "react-hook-form";
 import { DatePickerConfigProps, InputDateAppProps } from "./InputDateAppProps";
-import InputDateAndroid from "./implementations/InputDateAndroid";
-import InputDateIos from "./implementations/InputDateIos";
 import InputWrapperApp from "../inputWrapper/InputWrapperApp";
 import useThemeColor from "@/hooks/theme/useThemeColor";
 import { TextApp } from "@/components/texts/TextApp";
-import {
-  AndroidNativeProps,
-  DateTimePickerEvent,
-  IOSNativeProps,
-} from "@react-native-community/datetimepicker";
+import { DateTimePickerEvent } from "@react-native-community/datetimepicker";
 import InputClearIconApp from "../inputClear/InputClearIconApp";
+import InputDateImpDefault from "./implementations/InputDateImp";
 
 /**
  * @description Application input date component
@@ -69,31 +64,6 @@ function InputDateApp<T extends FieldValues>({
     return date?.toLocaleDateString();
   };
 
-  const renderDatePicker = () => {
-    switch (Platform.OS) {
-      case "android":
-        return (
-          <InputDateAndroid
-            visible={visible}
-            value={field.value}
-            dateTimePickeckProps={dateTimeConfig as AndroidNativeProps}
-          />
-        );
-      case "ios":
-        return (
-          <InputDateIos
-            visible={visible}
-            value={field.value}
-            dateTimePickeckProps={dateTimeConfig as IOSNativeProps}
-          />
-        );
-      default:
-        return (
-          <TextApp>Unsupported platform for date picker: {Platform.OS}</TextApp>
-        );
-    }
-  };
-
   return (
     <InputWrapperApp
       label={label}
@@ -109,7 +79,11 @@ function InputDateApp<T extends FieldValues>({
           <TextApp>{formatDate(field.value)}</TextApp>
         </Pressable>
         <InputClearIconApp clearInput={clearInput} value={field.value} />
-        {renderDatePicker()}
+        <InputDateImpDefault
+          visible={visible}
+          value={field.value}
+          dateTimePickeckProps={dateTimeConfig}
+        />
       </>
     </InputWrapperApp>
   );
