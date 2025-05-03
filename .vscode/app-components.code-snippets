@@ -103,4 +103,18 @@
     ],
     "description": "Accordion component",
   },
+  "TopTabs": {
+    "scope": "typescriptreact",
+    "prefix": "appTopTabs",
+    "body": [
+      "<TopTabsApp$0",
+      "  tabItems={[",
+      "    { name: \"default\", title: \"Solapa default\" },",
+      "    { name: \"tab1\", title: \"Solapa 2\" },",
+      "    { name: \"tab2\", title: \"Solapa 3\" },",
+      "  ]}",
+      "/>",
+    ],
+    "description": "TopTabs component",
+  },
 }
