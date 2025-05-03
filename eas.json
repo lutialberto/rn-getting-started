@@ -6,7 +6,16 @@
   "build": {
     "development": {
       "developmentClient": true,
-      "distribution": "internal"
+      "distribution": "internal",
+      "env": {
+        "APP_VARIANT": "development"
+      }
+    },
+    "test": {
+      "extends": "development",
+      "env": {
+        "APP_VARIANT": "test"
+      }
     },
     "preview": {
       "distribution": "internal"
