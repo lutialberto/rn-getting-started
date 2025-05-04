@@ -1,162 +1,208 @@
-# comandos y acciones que hice para crear la app expo
+# RN Getting Started
 
-# descargar este proyecto como zip y descomprimirla dentro de la carperta donde se quiere crear la solucion
-# debería descargarse con el siguiente nombre -> rn-getting-started-master
+Este documento describe los pasos necesarios para configurar un proyecto base de React Native con Expo. Incluye la instalación de dependencias, configuración de herramientas, y generación de componentes y configuraciones comunes para iniciar un proyecto rápidamente. Este proyecto está diseñado para facilitar el desarrollo de aplicaciones con configuraciones predefinidas y buenas prácticas.
 
-# Crear la solucion
-npx create-expo-app {NombreApp} --template tabs
-# Pregunta si quiero instalar create-expo-app -> y
+## Índice
 
-# Ir a la solucion
-cd .\{NombreApp}
+1. Introducción
+2. Creación del Proyecto
+3. Instalación de Dependencias
+4. Configuración del Proyecto
+5. Ejecución del Proyecto
+6. Configuración de Builds y Ambientes
 
-# librería de storage
-npx expo install expo-secure-store
+## 1. Introducción
 
-# libreria de manejo estado global
-npm install zustand
+Este proyecto base está diseñado para desarrolladores que buscan iniciar rápidamente con React Native utilizando Expo. Proporciona una estructura inicial con configuraciones predefinidas y buenas prácticas.
 
-# libreria de asistencia al desarrollo
-npx expo install expo-dev-client
+## 2. Creación del Proyecto
 
-# libreria de asistencia al chequeo de versiones
-npx expo-doctor
+1. Descarga este proyecto como un archivo ZIP y descomprímelo en la carpeta donde deseas crear la solución. El proyecto debería descargarse con el nombre `rn-getting-started-master`.
 
-# Borrar carpetas
-rm assets/fonts
-rm app
-rm components
-rm constants
+2. Crea la solución con el siguiente comando reemplazando `{NombreApp}` con el nombre de tu aplicación:
 
-# crear carpetas
-mkdir hooks
-mkdir components
-mkdir .vscode
+   ```bash
+   npx create-expo-app {NombreApp} --template tabs
+   ```
 
-# app
+3. Si se solicita, instala `create-expo-app`.
 
-# copiar la carpeta app a la raiz del proyecto
-cp -r ../rn-getting-started-master/app ./
+4. Navega al directorio del proyecto:
 
-# Instalar librerías manualmente
+   ```bash
+   cd .\{NombreApp}
+   ```
 
-# prettier
-npm install prettier
-npm install --save-dev husky lint-staged
-npx husky init
+## 3. Instalación de Dependencias
 
-# copiar configuracion de la extension prettier para vs code
-cp -r ../rn-getting-started-master/.vscode/settings.json .vscode
+Instala las siguientes librerías necesarias para el proyecto:
 
-# fonts
+| Librería                                 | Propósito                           | Comando de Instalación                                                               |
+| ---------------------------------------- | ----------------------------------- | ------------------------------------------------------------------------------------ |
+| `expo-secure-store`                      | Almacenamiento seguro               | `npx expo install expo-secure-store`                                                 |
+| `zustand`                                | Manejo de estado global             | `npm install zustand`                                                                |
+| `@react-native-community/datetimepicker` | Selector de fechas                  | `npx expo install @react-native-community/datetimepicker`                            |
+| `react-native-toast-message`             | Mostrar notificaciones tipo "toast" | `npm install react-native-toast-message`                                             |
+| `prettier`                               | Formateo de código                  | `npm install prettier && npm install --save-dev husky lint-staged && npx husky init` |
+| `react-native-pager-view`                | Uso de carruseles                   | `npx expo install react-native-pager-view`                                           |
+| `expo-checkbox`                          | Uso de checkboxes                   | `npx expo install expo-checkbox`                                                     |
+| `react-hook-form`                        | Manejo de formularios               | `npm install react-hook-form`                                                        |
 
-# copiar archivos .ttf de fuentes contenidos en carpeta fonts a la carpeta assets del proyecto
-cp -r ../rn-getting-started-master/assets/fonts assets
+## 4. Configuración del Proyecto
 
-# hooks
+### 4.1 Borrar carpetas
 
-# copiar la carpeta theme a la carpeta hooks del proyecto
-cp -r ../rn-getting-started-master/hooks/theme hooks
+Elimina las siguientes carpetas del proyecto si existen:
 
-# componentes
+```bash
+rm -rf assets/fonts app components constants
+```
 
-# botones
+### 4.2 Crear carpetas
 
-# copiar la carpeta de buttons a la carpeta de components del proyecto
-cp -r ../rn-getting-started-master/components/buttons components
+Crea las siguientes carpetas en la raíz del proyecto:
 
-# librería para uso de carruseles
-npx expo install react-native-pager-view
+```bash
+mkdir hooks components .vscode
+```
 
-# librería para el uso de top bar navigation
-npm install @react-navigation/material-top-tabs react-native-tab-view
+### 4.3 Copiado de carpetas
 
-# containers -> errors - modals - spinners - views - carrousels - accordions - top bar
+Copia las carpetas necesarias desde el proyecto base:
 
-# copiar la carpeta de containers a la carpeta de components del proyecto
-cp -r ../rn-getting-started-master/components/containers components
+- **App**:
 
-# texts
+  ```bash
+  cp -r ../rn-getting-started-master/app ./
+  ```
 
-# copiar la carpeta de texts a la carpeta de components del proyecto
-cp -r ../rn-getting-started-master/components/texts components
+- **Prettier**:
 
-# inputs
+  ```bash
+  cp -r ../rn-getting-started-master/.vscode/settings.json .vscode
+  ```
 
-# instalar react hook form
-npm install react-hook-form
+- **Fuentes**:
 
-# librería para uso de date picker
-npx expo install @react-native-community/datetimepicker
+  ```bash
+  cp -r ../rn-getting-started-master/assets/fonts assets
+  ```
 
-# librería para uso de checkbox
-npx expo install expo-checkbox
+- **Hooks - Themes**:
 
-# generación de components -> inputText,inputCheckboc,inputDate,inputSelect
+  ```bash
+  cp -r ../rn-getting-started-master/hooks/theme hooks
+  ```
 
-# copiar la carpeta de forms a la carpeta de components del proyecto
-cp -r ../rn-getting-started-master/components/forms components
+- **Components**: Copia las carpetas `buttons`, `containers`, `texts`, `forms`, y `toast` desde `components` del proyecto base al nuevo proyecto.
 
-#toasts
+  ```bash
+  cp -r ../rn-getting-started-master/components/{buttons,containers,texts,forms,toast} components
+  ```
 
-# copiar la carpeta de toast a la carpeta components del proyecto
-cp -r ../rn-getting-started-master/components/toast components
+## 5. Ejecución del Proyecto
 
-# librería para mostrar las tostadas
-npm install --save react-native-toast-message
+1. Usa el siguiente comando para iniciar la solución:
 
-# ajustar App.tsx / \_layout.tsx (componente raiz de la aplicación), poniendo <ToastApp /> como ultimo elemento del dom
+   ```bash
+   npx expo start
+   ```
 
-# libreria para ejecucion y subida de apps
-npm install --global eas-cli
-eas init --id {EAS Build Project Id}
+2. Para correr con Expo Go en un dispositivo físico, abre la aplicación y escanea el código QR.
 
-# Pregunta username y luego password
+3. Para correr con un build de desarrollo en un dispositivo físico, conéctalo por USB a la PC, escanea el código QR para instalar la aplicación, luego escanea el código QR para obtener el enlace y pégalo dentro de la aplicación.
 
-# Instalacion de app en dispositivos de desarrollo
+## 6. Configuración de Builds y Ambientes
 
-# Definir un build a ejecutar luego de haber configurado todos modulos expo necesarios
+### 6.1 Configuración de Builds
+
+Define un build para ejecutar después de configurar todos los módulos necesarios de Expo:
+
+```bash
 eas build:configure
+```
 
-# pregunta a que plataformas quiero apuntar -> Todas | Android | Ios
+Selecciona las plataformas a las que deseas apuntar: Todas, Android o iOS.
 
-#Generación de configs para los 3 ambientes - dev - qa - prod
+### 6.2 Configuración de Ambientes (dev, test, prod)
 
-# copiar los archivos de env a la carpeta raíz del proyecto
-cp -r ../rn-getting-started-master/.env ./
-cp -r ../rn-getting-started-master/.env.test ./
-cp -r ../rn-getting-started-master/.env.production ./
+1. Copia los archivos de configuración de entorno a la raíz del proyecto:
 
-# renombrar app json a config js
-mv app.json app.config.js
+   ```bash
+   cp -r ../rn-getting-started-master/.env ./
+   cp -r ../rn-getting-started-master/.env.test ./
+   cp -r ../rn-getting-started-master/.env.production ./
+   ```
 
-# editar app.config.json
+2. Renombra el archivo `app.json` a `app.config.js`:
 
-# agregar al principio const IS_DEV = process.env.APP_VARIANT === 'development';
-# agregar al principio const IS_TEST = process.env.APP_VARIANT === 'test';
-# transformar el "objeto" entre {}, como sentencia js -> export default { ... }
-# editar expo.name -> 'RN Getting Started' + (IS_DEV ? ' - Dev' : IS_TEST ? ' - Test' : ''),
-# editar expo.android.package -> package: 'com.{nombre de la app}' + (IS_DEV ? '.dev' : IS_TEST ? '.test' : ''),
-# editar expo.ios.bundleIdentifier -> package: 'com.{nombre de la app}' + (IS_DEV ? '.dev' : IS_TEST ? '.test' : ''),
-# formatear con prettier el app.config.js
-npx prettier --write app.config.js
+   ```bash
+   mv app.json app.config.js
+   ```
 
-# editar eas json
+### 6.3 Editar `app.config.js`
 
-# agregar build.development.env.APP_VARIANT: "development"
-# agregar build.test.extends: "development"
-# agregar build.test.env.APP_VARIANT: "test"
+1. Agrega las siguientes constantes al principio del archivo para definir los entornos:
 
-# Levantar ambiente Android
-eas build --profile development --platform android
+   ```javascript
+   const IS_DEV = process.env.APP_VARIANT === "development";
+   const IS_TEST = process.env.APP_VARIANT === "test";
+   ```
 
-# pregunta sobre android application id -> com.{NombreApp}
-# pregunta sobre la keystore, generar nueva o usar una existente -> y/n
-# pregunta sobre instalar el build en emulador -> y/n
-# para dispositivos fisicos abrir el link o leer el qr con el celular e instalar la apk
+2. Transforma el contenido del archivo en una exportación de objeto de la siguiente manera:
 
-# ejecutar comando para correr la solucion
-npx expo start
+   ```javascript
+   export default {
+     // ...existing code...
+   };
+   ```
 
-# para correr con expo go en un dispositivo fisico, abrir la aplicacion y escanear el qr
-# para correr con development build en un dispositivo fisico, conectarlo por usb a la pc, escanear el qr para instalar la aplicacion, luego escanear el qr para obtener el link y pegarlo dentro de la aplicacion
+3. Edita las siguientes propiedades dentro del archivo:
+
+   - **`expo.name`**:
+
+     ```javascript
+     "RN Getting Started" + (IS_DEV ? " - Dev" : IS_TEST ? " - Test" : "");
+     ```
+
+   - **`expo.android.package`**:
+
+     ```javascript
+     "com.{nombre de la app}" + (IS_DEV ? ".dev" : IS_TEST ? ".test" : "");
+     ```
+
+   - **`expo.ios.bundleIdentifier`**:
+
+     ```javascript
+     "com.{nombre de la app}" + (IS_DEV ? ".dev" : IS_TEST ? ".test" : "");
+     ```
+
+4. Formatea el archivo con `Prettier`:
+
+   ```bash
+   npx prettier --write app.config.js
+   ```
+
+### 6.4 Editar `eas.json`
+
+1. Agrega la siguiente configuración para los entornos:
+
+   - **`build.development.env.APP_VARIANT`**: `"development"`
+   - **`build.test.extends`**: `"development"`
+   - **`build.test.env.APP_VARIANT`**: `"test"`
+
+### 6.5 Configurar Ambiente Android
+
+1. Ejecuta el siguiente comando para construir el ambiente de desarrollo en Android:
+
+   ```bash
+   eas build --profile development --platform android
+   ```
+
+2. Responde las siguientes preguntas durante el proceso:
+
+   - **Android Application ID**: Ingresa `com.{NombreApp}`.
+   - **Keystore**: Genera una nueva o usa una existente (`y/n`).
+   - **Instalar el build en emulador**: Responde `y/n` según corresponda.
+
+3. Para dispositivos físicos, abre el enlace o escanea el código QR con el celular e instala la APK.
