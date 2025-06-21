@@ -51,55 +51,31 @@ Instala las siguientes librerías necesarias para el proyecto:
 
 ## 4. Configuración del Proyecto
 
-### 4.1 Borrar carpetas
+### 4.1 Configuración automática
 
-Elimina las siguientes carpetas del proyecto si existen:
+Para facilitar la configuración inicial, puedes usar el comando batch `setup-base.bat` ubicado en la carpeta `_commands`. Este comando realiza todos los pasos de borrado, creación y copiado de carpetas necesarias desde el proyecto base.
 
-```bash
-rm -rf assets/fonts app components constants
+Ejecuta en la raíz del proyecto:
+
+```bat
+..\rn-getting-started-master\_commands\setup-base.bat
 ```
 
-### 4.2 Crear carpetas
+Esto eliminará las carpetas iniciales, creará las necesarias y copiará todos los recursos base.
 
-Crea las siguientes carpetas en la raíz del proyecto:
+### Nota sobre componentes individuales
 
-```bash
-mkdir hooks components .vscode
+Si solo necesitas copiar una carpeta de componente específica, puedes usar el comando:
+
+```bat
+..\rn-getting-started-master\_commands\copy-component.bat <nombre-carpeta>
 ```
 
-### 4.3 Copiado de carpetas
+O para copiar todos los componentes elegibles:
 
-Copia las carpetas necesarias desde el proyecto base:
-
-- **App**:
-
-  ```bash
-  cp -r ../rn-getting-started-master/app ./
-  ```
-
-- **Prettier**:
-
-  ```bash
-  cp -r ../rn-getting-started-master/.vscode/settings.json .vscode
-  ```
-
-- **Fuentes**:
-
-  ```bash
-  cp -r ../rn-getting-started-master/assets/fonts assets
-  ```
-
-- **Hooks - Themes**:
-
-  ```bash
-  cp -r ../rn-getting-started-master/hooks/theme hooks
-  ```
-
-- **Components**: Copia las carpetas `buttons`, `containers`, `texts`, `forms`, y `toast` desde `components` del proyecto base al nuevo proyecto.
-
-  ```bash
-  cp -r ../rn-getting-started-master/components/{buttons,containers,texts,forms,toast} components
-  ```
+```bat
+..\rn-getting-started-master\_commands\copy-component.bat --all
+```
 
 ## 5. Ejecución del Proyecto
 
@@ -129,10 +105,8 @@ Selecciona las plataformas a las que deseas apuntar: Todas, Android o iOS.
 
 1. Copia los archivos de configuración de entorno a la raíz del proyecto:
 
-   ```bash
-   cp -r ../rn-getting-started-master/.env ./
-   cp -r ../rn-getting-started-master/.env.test ./
-   cp -r ../rn-getting-started-master/.env.production ./
+   ```bat
+   ..\rn-getting-started-master\_commands\setup-env.bat
    ```
 
 2. Renombra el archivo `app.json` a `app.config.js`:
@@ -222,14 +196,10 @@ Los snippets son fragmentos de código reutilizables que facilitan la escritura 
 
 ### Copiar los snippets al proyecto
 
-Ejecuta los siguientes comandos para copiar los archivos de snippets desde el proyecto base:
+Ejecuta el siguiente comando para copiar los archivos de snippets desde el proyecto base:
 
-```bash
-cp ../rn-getting-started-master/.vscode/app-components.code-snippets .vscode/
-cp ../rn-getting-started-master/.vscode/app-form.code-snippets .vscode/
-cp ../rn-getting-started-master/.vscode/app-hooks.code-snippets .vscode/
-cp ../rn-getting-started-master/.vscode/app-navigation.code-snippets .vscode/
-cp ../rn-getting-started-master/.vscode/app-debug.code-snippets .vscode/
+```bat
+..\rn-getting-started-master\_commands\copy-snippet.bat
 ```
 
 Una vez copiados, los snippets estarán disponibles automáticamente en VSCode al escribir los prefijos definidos en cada archivo.
