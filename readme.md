@@ -212,6 +212,45 @@ Ejecuta el siguiente comando para copiar los archivos de snippets desde el proye
 
 Una vez copiados, los snippets estarán disponibles automáticamente en VSCode al escribir los prefijos definidos en cada archivo.
 
+### Comentarios especiales en los snippets
+
+Para facilitar el uso y la comprensión de los snippets incluidos en este proyecto, se utilizan comentarios especiales dentro del código generado por cada snippet. Estos comentarios siguen el formato:
+
+```js
+// TIPO: <Descripción>
+```
+
+**¿Por qué lo hacemos?**  
+El objetivo es que cualquier persona que utilice un snippet pueda identificar rápidamente partes del código que requieren atención, personalización o que tienen un propósito especial (por ejemplo, código temporal o de depuración). Esto mejora la experiencia de desarrollo, reduce errores y ayuda a mantener el código limpio y entendible.
+
+#### Tipos de comentarios utilizados
+
+- `// TEMPORAL: ...`  
+  Indica que la línea o bloque de código es temporal y debe ser eliminado o reemplazado antes de finalizar la tarea o subir a producción.
+  _Ejemplo:_
+
+  ```js
+  // TEMPORAL: Elimina este log después de probar la integración
+  console.log("Componente montado");
+  ```
+
+- `// HINT: ...`  
+  Proporciona una pista, sugerencia o recordatorio sobre cómo completar, adaptar o utilizar correctamente el fragmento de código.  
+  _Ejemplo:_
+
+  ```js
+  // HINT: Inicializa el estado según tu necesidad
+  const [state, setState] = useState(null);
+  ```
+
+- `// DEBUG: ...`  
+  Señala que la línea o bloque es solo para propósitos de depuración y no debe quedar en el código final.  
+  _Ejemplo:_
+  ```js
+  // DEBUG: Solo para verificar el valor de la variable
+  console.log(state);
+  ```
+
 ## 8. Estructura de Carpetas Sugerida
 
 A continuación se muestra una estructura de carpetas recomendada para este proyecto:
