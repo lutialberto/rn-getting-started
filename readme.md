@@ -11,10 +11,18 @@ Este documento describe los pasos necesarios para configurar un proyecto base de
 5. Ejecución del Proyecto
 6. Configuración de Builds y Ambientes
 7. Snippets de VSCode
+8. Estructura de Carpetas Sugerida
+9. Buenas Prácticas
 
 ## 1. Introducción
 
 Este proyecto base está diseñado para desarrolladores que buscan iniciar rápidamente con React Native utilizando Expo. Proporciona una estructura inicial con configuraciones predefinidas y buenas prácticas.
+
+> **¿Por qué importar todo localmente y no usar una librería externa?**
+>
+> La idea principal es que todos los componentes, hooks y utilidades estén disponibles localmente en el proyecto, en lugar de depender de una librería externa que los exponga.  
+> Esto permite editar, adaptar y evolucionar cualquier parte del código según las necesidades del proyecto, sin depender de actualizaciones de una librería central ni enfrentar breaking changes inesperados.  
+> Así, el equipo tiene control total sobre la base de código y puede mantener la flexibilidad y la velocidad de desarrollo.
 
 ## 2. Creación del Proyecto
 
@@ -238,3 +246,60 @@ A continuación se muestra una estructura de carpetas recomendada para este proy
   - **theme/**: Hooks relacionados con el manejo de temas y estilos.
 
 Esta estructura facilita la organización y el mantenimiento del proyecto, siguiendo buenas prácticas para proyectos React Native con Expo.
+
+## 9. Buenas Prácticas
+
+A continuación se presentan algunas recomendaciones para mantener la calidad y organización del proyecto:
+
+- **Organización de carpetas:**  
+  Mantén los componentes, hooks y recursos en sus respectivas carpetas. Usa subcarpetas para agrupar componentes relacionados.
+
+- **Nomenclatura consistente:**  
+  Usa nombres descriptivos y en inglés para archivos, carpetas y variables. Ejemplo: `UserCard`, `useAuth`, `LoginForm`, `PreferencesScreen`, `NewsTab`.
+
+- **Formateo y linting:**  
+  El proyecto utiliza Prettier para mantener un formato de código consistente. Automaticamente se editan los archivos segun las reglas definidas sobre los archivos durante el pre-commit.
+
+- **Variables de entorno:**  
+  No edites los archivos `.env` a menos que sean cambios estables. Tampoco dejes datos sensibles ya que quedarán expuestos. Crea y utiliza el `.env.local` para sobreescribir las variables durante el desarrollo.
+
+- **Commits claros:**  
+  Escribe mensajes de commit descriptivos y en presente. Se recomienda el uso de prefijos para identificar el tipo de cambio realizado:
+
+  - **Feat:** Para agregar nuevas funcionalidades.  
+    _Ejemplo:_ `Feat: add user authentication flow`
+  - **Fix:** Para corregir errores o bugs.  
+    _Ejemplo:_ `Fix: resolve crash on login screen`
+  - **Doc:** Para cambios en la documentación.  
+    _Ejemplo:_ `Doc: update installation instructions in README`
+  - **Refactor:** Para mejoras internas del código que no afectan la funcionalidad.  
+    _Ejemplo:_ `Refactor: simplify user context logic`
+  - **Rollback:** Para revertir cambios previos.  
+    _Ejemplo:_ `Rollback: revert authentication feature`
+  - **Merge:** Para fusiones de ramas.  
+    _Ejemplo:_ `Merge: branch 'feature/login' into 'main'`
+
+  Utilizar estos prefijos ayuda a mantener un historial de cambios claro y fácil de entender para todo el equipo.
+
+- **Documentación:**  
+  Mantén este README actualizado y documenta cualquier cambio relevante en la estructura o configuración del proyecto.
+
+- **Snippets y utilidades:**  
+  Aprovecha los snippets de VSCode incluidos para acelerar el desarrollo y mantener la consistencia.
+
+### Criterios para buscar, agregar y validar recursos en el proyecto
+
+- **¿Cómo encontrar si algo ya existe?**  
+  Antes de crear un nuevo componente, hook o utilidad, utiliza la búsqueda global de tu editor (por ejemplo, `Ctrl+Shift+F` en VSCode) para verificar si ya existe algo similar en el proyecto.  
+  También puedes navegar por la estructura de carpetas sugerida para identificar recursos reutilizables.
+
+- **¿Cómo agregar nuevos recursos?**  
+  Si necesitas agregar un nuevo componente, hook o utilidad:
+
+  - Ubícalo en la carpeta correspondiente (`components/`, `hooks/`, etc.).
+  - Sigue la convención de nombres y estructura del proyecto. En caso de ser un elemento 'App' (ButtonApp, TextApp, etc), significa que no puede tener logica de negocio y debe ser lo mas generico posible.
+  - Si es un componente que podría reutilizarse, documenta su uso y dependencias con las anotaciones. Considerar si es posible y vale la pena generar un snippet.
+  - Aplica los principios SOLID siempre que puedas.
+
+- **¿Qué hacer si necesitas modificar algo existente?**
+  - Antes de modificar un recurso compartido, revisa si otros módulos lo utilizan para evitar romper funcionalidades.
