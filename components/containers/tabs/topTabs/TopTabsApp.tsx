@@ -27,9 +27,12 @@ interface TopTabsAppProps {
 /**
  * @description TopTabsApp component that renders a Material Top Tabs navigator with the provided tab items.
  * @param tabItems - A list of items, each containing a name and title.
- * @example
+ * @example - update your _layout.tsx file to include the new top tabs:
+ * ```tsx
  * <Stack.Screen name="(topTabs)" options={{ headerShown: false }} />
- * @example
+ * ```
+ * @example - include the TopTabsApp in your layout:
+ * ```tsx
  * <TopTabsApp
  *   tabItems={[
  *     { name: "default", title: "Solapa default" },
@@ -37,6 +40,7 @@ interface TopTabsAppProps {
  *     { name: "tab2", title: "Solapa 3" },
  *   ]}
  * />
+ * ```
  */
 const TopTabsApp = (props: TopTabsAppProps) => {
   const colors = useThemeColor();
