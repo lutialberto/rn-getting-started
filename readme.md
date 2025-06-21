@@ -10,6 +10,7 @@ Este documento describe los pasos necesarios para configurar un proyecto base de
 4. Configuración del Proyecto
 5. Ejecución del Proyecto
 6. Configuración de Builds y Ambientes
+7. Snippets de VSCode
 
 ## 1. Introducción
 
@@ -206,3 +207,29 @@ Selecciona las plataformas a las que deseas apuntar: Todas, Android o iOS.
    - **Instalar el build en emulador**: Responde `y/n` según corresponda.
 
 3. Para dispositivos físicos, abre el enlace o escanea el código QR con el celular e instala la APK.
+
+## 7. Snippets de VSCode
+
+Los snippets son fragmentos de código reutilizables que facilitan la escritura rápida de componentes y configuraciones comunes en el proyecto. Se recomienda agregarlos a la carpeta `.vscode` para tenerlos disponibles en tu editor VSCode.
+
+### Archivos de snippets disponibles
+
+- `app-components.code-snippets`: Componentes reutilizables (botones, textos, iconos, etc.)
+- `app-form.code-snippets`: Formularios y campos de entrada
+- `app-hooks.code-snippets`: Hooks personalizados (temas, estilos, toast, etc.)
+- `app-navigation.code-snippets`: Navegación y layouts
+- `app-debug.code-snippets`: Utilidades para debug visual
+
+### Copiar los snippets al proyecto
+
+Ejecuta los siguientes comandos para copiar los archivos de snippets desde el proyecto base:
+
+```bash
+cp ../rn-getting-started-master/.vscode/app-components.code-snippets .vscode/
+cp ../rn-getting-started-master/.vscode/app-form.code-snippets .vscode/
+cp ../rn-getting-started-master/.vscode/app-hooks.code-snippets .vscode/
+cp ../rn-getting-started-master/.vscode/app-navigation.code-snippets .vscode/
+cp ../rn-getting-started-master/.vscode/app-debug.code-snippets .vscode/
+```
+
+Una vez copiados, los snippets estarán disponibles automáticamente en VSCode al escribir los prefijos definidos en cada archivo.
