@@ -13,7 +13,9 @@ interface CarrouselAppProps {
 
 /**
  * @description Application carrousel component
+ * @snippet appCarrousel
  * @example
+ * ```tsx
  * <CarrouselApp
  *   items={(<Text>Page 1 content</Text>, <Text>Page 2 content</Text>)}
  *   carrouselContainerStyle={{
@@ -21,6 +23,7 @@ interface CarrouselAppProps {
  *     height: 200,
  *   }}
  * />
+ * ```
  * @dependencies useThemeColor, react-native-pager-view
  * @param items - pages of the carrousel
  * @param itemContainerStyle - style of a page container

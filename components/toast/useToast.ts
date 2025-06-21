@@ -9,7 +9,9 @@ interface ToastAppProps {
 /**
  * @description Hook to show toasts
  * @example
+ * ```tsx
  * const {showToast} = useToastsApp();
+ * ```
  * @dependencies useTextStyles, useThemeColor, react-native-root-toast
  */
 export const useToastApp = () => {

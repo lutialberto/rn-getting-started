@@ -8,12 +8,15 @@ import { FieldValues, useController } from "react-hook-form";
 
 /**
  * @description Application input text component
+ * @snippet appInputCheckbox
  * @example
+ * ```tsx
  * <InputCheckboxApp
  *  formControl={{ control, name: 'checkbox' }}
  *  label='Checkbox'
  *  error='errors.checkbox?.message'
  * />
+ * ```
  * @dependencies TextApp, useTextStyles, react-hook-form,
  * @param formControl - form control of the input
  * @param label - input label

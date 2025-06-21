@@ -7,11 +7,15 @@ import useThemeColor from "@/hooks/theme/useThemeColor";
 
 /**
  * @description Application modal component
- * @example Minimal Example
+ * @snippet appBottomSheet
+ * @example - Minimal Example
+ * ```tsx
  * <BottomSheet modalProps={{ visible: true, onDismiss: () => { } }} >
  *  <Text>GenericModal</Text>
  * </BottomSheet>
- * @example Full Example
+ * ```
+ * - Full Example
+ * ```tsx
  * <BottomSheet
  *  modalProps={{ visible: true, onDismiss: () => { } }}
  *  visibleContainerStyle={styles.visibleContainer}
@@ -19,6 +23,7 @@ import useThemeColor from "@/hooks/theme/useThemeColor";
  * >
  *  <Text>GenericModal</Text>
  * </BottomSheet>
+ * ```
  * @dependencies Modal, useThemeColor
  * @param modalProps - modal props
  * @param children - modal children

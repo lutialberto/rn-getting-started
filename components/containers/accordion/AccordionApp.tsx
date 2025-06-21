@@ -25,7 +25,9 @@ interface AccordionAppProps {
 
 /**
  * @description Application accordion component
+ * @snippet appAccordion
  * @example
+ * ```tsx
  * <AccordionApp
  *   containerStyle={{ width: "90%" }}
  *   items={[1, 2, 3].map(item => ({
@@ -33,6 +35,7 @@ interface AccordionAppProps {
  *     body: <TextApp>Accordion Item Body{item}</TextApp>,
  *   }))}
  * />
+ * ```
  * @dependencies useThemeColor, IconApp, TextApp
  * @param items - accordion items title and body
  * @param containerStyle - style of the accordion container

@@ -5,7 +5,9 @@ import useThemeColor from "@/hooks/theme/useThemeColor";
 
 /**
  * @description Application spinner component
- * @example Minimal Example
+ * @snippet appSpinner
+ * @example - Minimal Example
+ * ```tsx
  * <SpinnerApp
  *  visible={true}
  *  style={{
@@ -13,7 +15,9 @@ import useThemeColor from "@/hooks/theme/useThemeColor";
  *   flex: 1,//o este
  *  }}
  * />
- * @example Full Example
+ * ```
+ * - Full Example
+ * ```tsx
  * <SpinnerApp
  *  visible={true}
  *  style={{
@@ -24,6 +28,7 @@ import useThemeColor from "@/hooks/theme/useThemeColor";
  * >
  *   <Text>Content</Text>
  * </SpinnerApp>
+ * ```
  * @dependencies useThemeColor
  * @param visible - spinner visible
  * @param variant - spinner variant

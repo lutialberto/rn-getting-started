@@ -9,7 +9,9 @@ import InputClearIconApp from "../inputClear/InputClearIconApp";
 
 /**
  * @description Application input select component
+ * @snippet appInputSelect
  * @example
+ * ```tsx
  * <InputSelectApp
  *   formControl={{
  *     control: control,
@@ -26,6 +28,7 @@ import InputClearIconApp from "../inputClear/InputClearIconApp";
  *     { label: "Option 3", value: "option3" },
  *   ]}
  * />
+ * ```
  * @dependencies InputAppProps, InputClearIconApp, InputWrapperApp, ModalApp, TextApp, IconApp, react-hook-form
  * @param options - options to select
  * @param formControl - form control of the input text

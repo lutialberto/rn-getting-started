@@ -11,13 +11,16 @@ import { Fonts } from "../texts/Fonts";
 
 /**
  * @description Put this component in the root of your app as the last element to use the toast component.
+ * @snippet hookToast
  * @example
+ * ```tsx
  * return (
  *  <>
  *  {...}
  *  <ToastApp />
  *  </>
  * )
+ * ```
  * @dependencies TextApp, react-native-toast-message
  */
 const ToastApp = () => {

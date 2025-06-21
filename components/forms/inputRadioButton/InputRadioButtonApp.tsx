@@ -12,7 +12,9 @@ import { TextApp } from "@/components/texts/TextApp";
 
 /**
  * @description Application input radio button component
+ * @snippet appInputRadioButton
  * @example
+ * ```tsx
  * <InputRadioButtonApp
  *   formControl={{
  *     control,
@@ -28,6 +30,7 @@ import { TextApp } from "@/components/texts/TextApp";
  *     { label: "Option 3", value: "option3" },
  *   ]}
  * />
+ * ```
  * @dependencies InputSelectAppProps, InputWrapperApp, TextApp, IconApp, react-hook-form
  * @param options - options to select
  * @param formControl - form control of the input text

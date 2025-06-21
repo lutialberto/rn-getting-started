@@ -6,6 +6,7 @@ import { Fonts } from "./Fonts";
 /**
  * @description - This hook is used to get the styles for the text component
  * @returns - styles and colors
+ * @snippet hookTextStyles
  * @example - const { textStyles, colors } = useTextStyles();
  * @depencies useTheme
  */

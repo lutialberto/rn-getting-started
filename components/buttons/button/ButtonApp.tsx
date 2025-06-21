@@ -7,9 +7,12 @@ import { useButtonStyles } from "./useButtonStyles";
 /**
  * @description Application button component
  * @snippet appButton
- * @example Minimal Example
+ * @example - Minimal Example
+ * ```tsx
  * <ButtonApp onPress={() => { }} />
- * @example Full Example
+ * ```
+ * - Full Example
+ * ```tsx
  * <ButtonApp
  *  variant={'default'}
  *  enabled={true}
@@ -19,6 +22,7 @@ import { useButtonStyles } from "./useButtonStyles";
  *  containerStyle={styles.container}
  *  labelStyle={styles.label}
  * />
+ * ```
  * @dependencies Text, useButtonStyles
  * @param variant - button variant
  * @param enabled - button enabled

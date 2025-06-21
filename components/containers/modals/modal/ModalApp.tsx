@@ -14,11 +14,15 @@ import IconApp from "@/components/texts/icon/IconApp";
 
 /**
  * @description Application modal component
- * @example Minimal Example
+ * @snippet appModal
+ * @example - Minimal Example
+ * ```tsx
  * <ModalApp modalProps={{ visible: true, onDismiss: () => { } }} >
  *  <Text>GenericModal</Text>
  * </ModalApp>
- * @example Full Example
+ * ```
+ * - Full Example
+ * ```tsx
  * <ModalApp
  *  modalProps={{ visible: true, onDismiss: () => { } }}
  *  visibleContainerStyle={styles.visibleContainer}
@@ -26,6 +30,7 @@ import IconApp from "@/components/texts/icon/IconApp";
  * >
  *  <Text>GenericModal</Text>
  * </ModalApp>
+ * ```
  * @dependencies Text, useThemeColor
  * @param modalProps - modal props
  * @param children - modal children

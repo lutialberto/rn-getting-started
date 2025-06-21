@@ -11,7 +11,9 @@ import InputDateImpDefault from "./implementations/InputDateImp";
 
 /**
  * @description Application input date component
+ * @snippet appInputDate
  * @example
+ * ```tsx
  * <InputDateApp
  *  formControl={{ name: 'date', control }}
  *  label='Date'
@@ -19,6 +21,7 @@ import InputDateImpDefault from "./implementations/InputDateImp";
  *  containerStyle={{ minWidth: 250 }}
  *  clearInput={() => setValue("date", null)}
  * />
+ * ```
  * @dependencies InputAppProps, InputClearIconApp, InputWrapperApp, TextApp, IconApp, InputDateIos, InputDateAdroid, react-hook-form, @react-native-community/datetimepicker
  * @param formControl - form control of the input date
  * @param dateInput - date input props

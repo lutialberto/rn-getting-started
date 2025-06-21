@@ -8,9 +8,11 @@ import { useTextStyles } from "@/components/texts/useTextStyles";
  * @description Fallback component to wrap the entire app when an error occurs.
  * It displays the error message and a button to retry.
  * @example
+ * ```tsx
  * <Try catch={MainFallbackApp}>
  *  {...}
  * </Try>
+ * ```
  * @param {ErrorBoundaryProps} props - The error boundary props.
  * @returns {JSX.Element} - The fallback component.
  */

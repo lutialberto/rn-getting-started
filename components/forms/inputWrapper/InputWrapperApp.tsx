@@ -9,12 +9,14 @@ import { useTextStyles } from "@/components/texts/useTextStyles";
 /**
  * @description Application input wrapper component
  * @example
+ * ```tsx
  * <InputWrapperApp
  *  label='GenericInputWrapper'
  *  error='GenericError'
  * >
  *  <Text>GenericInputWrapper</Text>
  * </InputWrapperApp>
+ * ```
  * @dependencies TextApp, useThemeColors, useTextStyles
  * @param children - input wrapper children
  * @param error - input wrapper error

@@ -31,7 +31,7 @@ interface TopTabsAppProps {
  * ```tsx
  * <Stack.Screen name="(topTabs)" options={{ headerShown: false }} />
  * ```
- * @example - include the TopTabsApp in your layout:
+ * - include the TopTabsApp in your layout:
  * ```tsx
  * <TopTabsApp
  *   tabItems={[

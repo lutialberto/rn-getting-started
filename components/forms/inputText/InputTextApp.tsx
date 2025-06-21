@@ -9,13 +9,16 @@ import InputClearIconApp from "../inputClear/InputClearIconApp";
 
 /**
  * @description Application input text component
+ * @snippet appInputText
  * @example
+ * ```tsx
  * <InputTextApp
  *  formControl={{ control: control, name: 'genericName' }}
  *  textInput={{ placeholder: 'GenericPlaceholder' }}
  *  label='GenericLabel'
  *  error='GenericError'
  * />
+ * ```
  * @dependencies InputAppProps, InputClearIconApp, InputWrapperApp, useTextStyles, react-hook-form, IconApp
  * @param formControl - form control of the input text
  * @param textInput - text input props
