@@ -233,3 +233,38 @@ cp ../rn-getting-started-master/.vscode/app-debug.code-snippets .vscode/
 ```
 
 Una vez copiados, los snippets estarán disponibles automáticamente en VSCode al escribir los prefijos definidos en cada archivo.
+
+## 8. Estructura de Carpetas Sugerida
+
+A continuación se muestra una estructura de carpetas recomendada para este proyecto:
+
+```plaintext
+.
+├── app/
+├── assets/
+│   └── fonts/
+├── components/
+│   ├── buttons/
+│   ├── containers/
+│   ├── forms/
+│   ├── texts/
+│   └── toast/
+├── hooks/
+│   └── theme/
+```
+
+**Descripción de las carpetas:**
+
+- **app/**: Contiene la estructura principal de navegación y pantallas de la aplicación.
+- **assets/**: Archivos estáticos como imágenes, fuentes y otros recursos.
+  - **fonts/**: Fuentes personalizadas utilizadas en la app.
+- **components/**: Componentes reutilizables de la interfaz de usuario.
+  - **buttons/**: Botones personalizados.
+  - **containers/**: Contenedores y layouts reutilizables.
+  - **forms/**: Componentes relacionados con formularios.
+  - **texts/**: Componentes de texto personalizados.
+  - **toast/**: Componentes para notificaciones tipo toast.
+- **hooks/**: Hooks personalizados para lógica reutilizable.
+  - **theme/**: Hooks relacionados con el manejo de temas y estilos.
+
+Esta estructura facilita la organización y el mantenimiento del proyecto, siguiendo buenas prácticas para proyectos React Native con Expo.
