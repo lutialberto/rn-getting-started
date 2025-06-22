@@ -1,0 +1,12 @@
+{
+  "recommendations": [
+    "expo.vscode-expo-tools",
+    "rodrigovallades.es7-react-js-snippets",
+    "esbenp.prettier-vscode",
+    "pnp.polacode",
+    "wayou.vscode-todo-highlight",
+    "donjayamanne.githistory",
+    "ritwickdey.liveserver",
+    "ecmel.vscode-html-css"
+  ]
+}

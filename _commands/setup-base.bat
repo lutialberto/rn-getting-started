@@ -13,6 +13,7 @@ mkdir .vscode
 REM Copiar carpetas y archivos desde el proyecto base
 xcopy /E /I /Y "%~dp0..\\app" app
 xcopy /E /I /Y "%~dp0..\\.vscode\settings.json" .vscode\
+xcopy /E /I /Y "%~dp0..\.vscode\extensions.json" .vscode\
 xcopy /E /I /Y "%~dp0..\\assets\fonts" assets\fonts
 xcopy /E /I /Y "%~dp0..\\hooks\theme" hooks\theme
 
