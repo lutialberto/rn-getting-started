@@ -9,7 +9,7 @@ import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
 import "react-native-reanimated";
 import { useFonts } from "@/components/texts/useFonts";
-import { useColorScheme } from "react-native";
+import { StatusBar, useColorScheme } from "react-native";
 import ToastApp from "@/components/toast/ToastApp";
 import MainFallbackApp from "@/components/containers/error/MainFallbackApp";
 
@@ -44,11 +44,21 @@ export default function RootLayout() {
 
 function RootLayoutNav() {
   const colorScheme = useColorScheme();
+  const theme = colorScheme === "dark" ? DarkTheme : DefaultTheme;
 
   return (
-    <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
+    <ThemeProvider value={theme}>
+      <StatusBar
+        barStyle={colorScheme === "dark" ? "light-content" : "dark-content"}
+        backgroundColor={theme.colors.background}
+      />
       <Try catch={MainFallbackApp}>
-        <Stack>
+        <Stack
+          screenOptions={{
+            headerStyle: { backgroundColor: "red" },
+            headerTintColor: "brown",
+          }}
+        >
           <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         </Stack>
       </Try>
