@@ -146,4 +146,14 @@
     ],
     "description": "TopTabs component",
   },
+  "CardApp": {
+    "scope": "typescriptreact",
+    "prefix": "appCard",
+    "body": [
+      "<CardApp${0}>",
+      "  <TextApp>${1:Card content}</TextApp>",
+      "</CardApp>",
+    ],
+    "description": "CardApp component",
+  },
 }
